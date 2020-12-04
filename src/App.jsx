@@ -1,9 +1,12 @@
-import logo from './logo.svg'
 import './App.css'
 
 import clsx from 'clsx'
 
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles'
+
+import FaceIcon from '@material-ui/icons/Face'
+
+import MediaCard from './cards/MediaCard'
 
 import theme from './themes/default'
 
@@ -22,10 +25,10 @@ const useStyles = makeStyles(
       height: '100vh',
       overflowY: 'scroll',
       gridTemplate: `
-      "header header header" auto
-      "left content right" auto
-      "footer footer footer" auto
-      / 1fr auto 1fr
+      "header header header" 1fr
+      "left content right" 5fr
+      "footer footer footer" 1fr
+      / 1fr 5fr 1fr
       `,
     },
 
@@ -41,22 +44,27 @@ const useStyles = makeStyles(
 
     headerItem: {
       gridArea: 'header',
+      backgroundColor: 'lightgreen',
     },
 
     leftItem: {
       gridArea: 'left',
+      backgroundColor: 'pink',
     },
 
     contentItem: {
       gridArea: 'content',
+      backgroundColor: 'lightblue',
     },
 
     rightItem: {
       gridArea: 'right',
+      backgroundColor: 'lavender',
     },
 
     footerItem: {
       gridArea: 'footer',
+      backgroundColor: 'orange',
     },
   }),
   { name: 'App' }
@@ -69,9 +77,15 @@ const App = props => {
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
         <div className={classes.grid}>
-          <div className={clsx(classes.gridItem, classes.headerItem)}>HEADER</div>
+          <div className={clsx(classes.gridItem, classes.headerItem)}>
+            <FaceIcon />
+            HEADER
+          </div>
           <div className={clsx(classes.gridItem, classes.leftItem)}>LEFT</div>
-          <div className={clsx(classes.gridItem, classes.contentItem)}>CONTENT</div>
+          <div className={clsx(classes.gridItem, classes.contentItem)}>
+            {/* CONTENT */}
+            <MediaCard />
+          </div>
           <div className={clsx(classes.gridItem, classes.rightItem)}>RIGHT</div>
           <div className={clsx(classes.gridItem, classes.footerItem)}>FOOTER</div>
         </div>

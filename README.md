@@ -9,3 +9,14 @@
 - Install Material UI: https://material-ui.com/getting-started/installation/
 
 `yarn add @material-ui/core`
+
+- Install Material UI Icons: https://material-ui.com/components/material-icons/
+
+`yarn add @material-ui/icons`
+
+# Quick Start
+
+```
+yarn
+yarn start
+```
